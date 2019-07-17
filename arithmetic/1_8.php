@@ -1,24 +1,27 @@
 <?php
 //Получить все четырехзначные целые числа, в записи которых нет одинаковых цифр.
-
 for ($number=1000; $number < 10000 ; $number++) {
-    $digits = split($initialNumber);
-    
-
+    $digits = split($number);   
+    if (noEqualDigits($digits)) {
+        $numbers[] = $number;
+    }  
 }
 
+var_dump($numbers);
 
-for ($i=0; $i < count($digits); $i++) { 
-    if (isEqual($digits, $i)){
-        echo 'yes';
-        exit;
+function noEqualDigits($digits)
+{
+    for ($i=0; $i < count($digits); $i++) { 
+        if (isEqual($digits, $i)){
+            return false;
+        }
     }
+    return true;
 }
-echo 'no';
 
 function isEqual($digits, $i)
 {
-    for ($j=$i+1; $j < count($digits); $j++) { 
+    for ($j=$i+1; $j < count($digits); $j++) {
         if ($digits[$i] === $digits[$j] ){
             return true;
         }
