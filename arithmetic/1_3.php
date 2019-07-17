@@ -1,6 +1,6 @@
 <?php
 //Выяснить, образуют ли цифры данного натурального числа N возрастающую оследовательность.
-$number = (int)readline('Number: ');
+$number = readline('Number: ');
 $increase = 'yes';
 
 $k = $number % 10;
