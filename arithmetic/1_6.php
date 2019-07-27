@@ -1,19 +1,24 @@
 <?php
 //Получить  все  четырехзначные  числа,  в  записи  которых  встречаются только цифры 0,2,3,7.
-//нужно чтобы именно все цифры входили в каждое число
-for ($number=1000; $number < 10000; $number++) { 
-    if(isInclude($number)){
+//нужно чтобы все цифры входили в каждое число (без повторов)
+for ($number=1000; $number < 10000; $number++) {
+    $one    = isInclude($number, 0);
+    $two    = isInclude($number, 2);
+    $three  = isInclude($number, 3);
+    $seven  = isInclude($number, 7);
+
+    if($one && $two && $three && $seven){
         echo $number.PHP_EOL;
     }
 }
 
-function isInclude($number){
+function isInclude($number, $includeDigit){
     while ($number >= 1) {
-        $d = $number % 10;
-        if ($d!==0 && $d!==2 && $d!==3 && $d!==7){
-            return false;
+        $digit = $number % 10;
+        if ($digit === $includeDigit){
+            return true;
         }
         $number = $number / 10;
     }
-    return true;
+    return false;
 }
