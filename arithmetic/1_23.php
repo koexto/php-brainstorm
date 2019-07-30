@@ -2,35 +2,35 @@
 //Дано целое число N. Преобразовать число так, чтобы его цифры следовали в порядке возрастания.  
 $number = (int)readline('N: ');
 
-$k=0;
 $increase = false;
-while (!$increase){
-    $increase = true;
+while (!$increase){  
     $prev = $number % 10;
     $number = $number / 10;
-    echo 'Number='.$number.PHP_EOL;
-    $i = 0;
+    $bubble = bubble($number, $prev);
+    $number = $bubble[0];
+    $increase = $bubble[1];
+    echo $number.PHP_EOL;
+}
+
+
+function bubble($number, $prev)
+{
+    $increase = true;
     while ($number >= 1) {
         $digit = $number % 10;
-        //echo $digit.PHP_EOL;
         if($prev < $digit){
             $increase = false;
-            $newNumber += 10**$i * $digit;
-            $last = $prev;
+            $bubbleNumber += 10**$i++ * $digit;
+            $firstDigit = $prev;
         }else{
-            $newNumber += 10**$i * $prev;
+            $bubbleNumber += 10**$i++ * $prev;
             $prev = $digit;
-            $last = $digit;
+            $firstDigit = $digit;
         }
         $number = $number / 10;
-        $i++;
-        echo $newNumber.PHP_EOL;
     }
-    $newNumber += 10**$i * $last;
-    echo 'newNumber='.$newNumber.PHP_EOL;
-    $number = $newNumber;
-    $newNumber = 0;
-    $k++;
+    $bubbleNumber += 10**$i * $firstDigit;
+    return [$bubbleNumber, $increase];
 }
 
 
