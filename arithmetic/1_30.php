@@ -1,9 +1,5 @@
 <?php
 //Найти среди натуральных чисел n, n+1,...,2n1 числа-близнецы, т. е. два таких простых числа, разность между которыми равна двум.  
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-
 
 for ($number = 1000; $number < 10000; $number++){
     if (isPrimeNumber($number)){
@@ -15,10 +11,8 @@ for ($number = 1000; $number < 10000; $number++){
     }
 }
 
-
 function isTwins($number, $prevPrimeNumber)
 {
-    //if (!isset($prevPrimeNumber)) $prevPrimeNumber = $number;
     if ($number - 2 === $prevPrimeNumber){
         echo $prevPrimeNumber . ' - ' . $number . PHP_EOL;
     }
