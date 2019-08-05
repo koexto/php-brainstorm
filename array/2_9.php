@@ -8,6 +8,8 @@ function minMaxElements($array)
 {
     for ($i=0; $i < count($array); $i++) {
         if ($array[$i] % 2 === 0){
+            //if (!isset($maxEven)) $maxEven = $array[$i];
+            //if ($maxEven < $array[$i]) $maxEven = $array[$i];
             echo maxEven();
         }else{
             echo minUneven();
