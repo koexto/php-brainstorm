@@ -1,4 +1,21 @@
-/*
-*Надо создать класс, который будет выводить все возможные комбинации
-*без повторений из строки символов, установленной длинны. Так же кол-во комбинаций.
-*/
+<?php
+/**
+ * 
+ */
+class PlacementsWithoutRepetitions
+{
+    
+    /*function __construct(argument)
+    {
+        # code...
+    }*/
+
+    public function place($sequence)
+    {
+        return($sequence);
+    }
+
+}
+
+$perebor = new PlacementsWithoutRepetitions;
+echo $perebor->place('123');
