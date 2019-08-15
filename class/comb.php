@@ -10,7 +10,7 @@ class PlacementsWithoutRepetitions
         # code...
     }*/
 
-    public function place($sequence)
+    public function combination($sequence)
     {
         return($sequence);
     }
@@ -18,4 +18,4 @@ class PlacementsWithoutRepetitions
 }
 
 $perebor = new PlacementsWithoutRepetitions;
-echo $perebor->place('123');
+echo $perebor->combination('123');
