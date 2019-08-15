@@ -1,6 +1,6 @@
 
 $result = $order->save();
-    if (!$result->isSuccess())
+    if (!$result->isSuccess(
         {
             //$result->getErrors();
         }
