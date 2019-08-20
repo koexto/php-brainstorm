@@ -4,8 +4,6 @@
 $array = [2, 3, 4, 124, 4, 1, 44, 1, 44, 2, 21, 11];
 $max = $array[0];
 $min = $array[0];
-$indexMax = 0;
-$indexMin = 0;
 
 for ($i=0; $i < count($array); $i++) { 
     if ($max < $array[$i]){
@@ -21,4 +19,4 @@ for ($i=0; $i < count($array); $i++) {
 $array[$indexMax] = $min;
 $array[$indexMin] = $max;
 
-var_dump($array);
+print_r($array);
