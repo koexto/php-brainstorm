@@ -10,13 +10,13 @@ $indexMax = 0;
 
 for ($i=0; $i < count($array); $i++)
 { 
-    if ($max < $array[$i])
-    {
-        $max = $array[$i];
-        $indexMax = $i;
-    }
-    if ($min > $array[$i])
-        $min = $array[$i];
+	if ($max < $array[$i])
+	{
+		$max = $array[$i];
+		$indexMax = $i;
+	}
+	if ($min > $array[$i])
+		$min = $array[$i];
 }
 
 for ($i = 0; $i < count($array); $i++)
